@@ -1,0 +1,9 @@
+.editor {
+  border: solid 2px blue;
+  flex: 0.8;
+}
+
+.editor__textarea {
+  width: 100%;
+  height: 100%;
+}
