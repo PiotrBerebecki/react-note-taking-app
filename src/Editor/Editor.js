@@ -2,15 +2,18 @@ import React from 'react';
 
 import './Editor.css';
 
-class Editor extends React.Component {
-  render() {
-    const {currentNote} = this.props;
-    return (
-      <section className="editor">
-        <textarea className="editor__textarea" value={currentNote.text}/>
-      </section>
-    );
-  }
-}
+const Editor = ({currentNote, handleChange}) => (
+  <section className="editor">
+    <input className="editor__input editor__input--title"
+           type="text"
+           name="title"
+           onChange={handleChange}
+           value={currentNote.title} />
+    <textarea className="editor__input editor__input--text"
+              name="text"
+              value={currentNote.text}
+              onChange={handleChange} />
+  </section>
+);
 
 export default Editor;

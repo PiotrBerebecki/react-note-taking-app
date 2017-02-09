@@ -7,12 +7,14 @@ import './App.css';
 class App extends Component {
   constructor(props) {
     super(props);
+    this.handleChange = this.handleChange.bind(this);
     this.state = {
+      currentNote: 'note0',
       notes: {
         note0: {
           id: 0,
           title: '0 A title of a note',
-          text: 'Some random note text that should be longer than this',
+          text: 'Lorem aaeklsdn',
         },
         note1: {
           id: 1,
@@ -22,12 +24,23 @@ class App extends Component {
       },
     }
   }
+
+  handleChange(e) {
+    const notes = {...this.state.notes};
+    const name = e.target.name;
+    notes[this.state.currentNote] = {
+      ...notes[this.state.currentNote],
+      [name]: e.target.value,
+    }
+    this.setState({notes});
+  }
+
   render() {
     return (
 
       <main className="app">
         <Sidebar notes={this.state.notes} />
-        <Editor currentNote={this.state.notes.note0} />
+        <Editor currentNote={this.state.notes[this.state.currentNote]} handleChange={this.handleChange} />
       </main>
 
     );
