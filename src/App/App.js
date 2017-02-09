@@ -8,6 +8,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
+    this.updateCurrentNote = this.updateCurrentNote.bind(this);
     this.state = {
       currentNote: 'note0',
       notes: {
@@ -22,7 +23,13 @@ class App extends Component {
           text: 'More random note text that should be longer than this',
         }
       },
-    }
+    };
+  }
+
+  updateCurrentNote(e) {
+    this.setState({
+      currentNote: e.target.id
+    });
   }
 
   handleChange(e) {
@@ -31,15 +38,14 @@ class App extends Component {
     notes[this.state.currentNote] = {
       ...notes[this.state.currentNote],
       [name]: e.target.value,
-    }
+    };
     this.setState({notes});
   }
 
   render() {
     return (
-
       <main className="app">
-        <Sidebar notes={this.state.notes} />
+        <Sidebar notes={this.state.notes} handleClick={this.updateCurrentNote} />
         <Editor currentNote={this.state.notes[this.state.currentNote]} handleChange={this.handleChange} />
       </main>
 
