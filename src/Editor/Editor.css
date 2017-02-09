@@ -1,9 +1,20 @@
 .editor {
-  border: solid 2px blue;
+  padding: 1rem;
   flex: 0.8;
 }
 
-.editor__textarea {
+.editor__input {
   width: 100%;
+  font-size: inherit;
+  border: none;
+}
+
+.editor__input--title {
+  margin-bottom: 1rem;
+  font-size: 1.5em;
+}
+
+.editor__input--text {
   height: 100%;
+  line-height: 1.5;
 }

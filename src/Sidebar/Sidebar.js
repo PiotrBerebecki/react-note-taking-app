@@ -11,7 +11,8 @@ class Sidebar extends React.Component {
                               });
     return (
       <aside className="sidebar">
-        <ul>
+        <h2>Notes</h2>
+        <ul className="sidebar__list">
           {renderNotes}
         </ul>
       </aside>
