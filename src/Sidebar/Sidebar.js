@@ -7,7 +7,8 @@ const Sidebar = ({notes, handleClick}) => {
                             .map(key => {
                               return (
                                 <li key={key}>
-                                  <button onClick={handleClick}
+                                  <button className="sidebar__btn"
+                                          onClick={handleClick}
                                           id={key}>
                                     {notes[key].title}
                                   </button>

@@ -18,3 +18,11 @@
 .sidebar__list > * + * {
   margin-top: 0.5rem;
 }
+
+.sidebar__btn {
+  background-color: transparent;
+  color: inherit;
+  font-size: inherit;
+  text-align: inherit;
+  border: none;
+}
